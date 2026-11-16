@@ -2,6 +2,6 @@
   {
     "name": "Amazon",
     "url": "https://www.amazon.com.br/",
-    "enabled": false
+    "enabled": true
   }
 ]
