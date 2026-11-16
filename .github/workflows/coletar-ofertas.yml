@@ -1,0 +1,41 @@
+
+name: Achou Black - Coletar ofertas
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 * * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Baixar projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Instalar Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Coletar ofertas
+        run: npm run collect
+
+      - name: Salvar resultados
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ofertas-achou-black
+          path: output/
+          if-no-files-found: warn
