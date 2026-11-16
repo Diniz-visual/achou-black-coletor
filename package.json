@@ -1,0 +1,8 @@
+{
+  "name": "achou-black-coletor",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "collect": "node src/collect.js" },
+  "dependencies": { "playwright": "1.58.2" }
+}
