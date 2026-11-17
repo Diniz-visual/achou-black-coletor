@@ -1,0 +1,5 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const {parsePrice,buildAmazonProduct}=require('../src/amazon-visible.cjs');
+const source={id:'amazon',name:'Amazon',host:'www.amazon.com.br',category:'Tecnologia'};
+test('moeda brasileira com milhares',()=>{assert.equal(parsePrice('R$ 1.299,90'),1299.9);assert.equal(parsePrice('12x de R$ 99,00'),null);assert.equal(parsePrice('1299.90'),null)});
+test('produto verificável',()=>{const p=buildAmazonProduct({asin:'B0CP31L73X',name:'Kindle 16 GB',price:'R$ 599,00'},source,'https://www.amazon.com.br/dp/B0CP31L73X');assert.equal(p.length,1);assert.equal(p[0].price,599);assert.deepEqual(p[0].campaigns,[])});
+test('rejeita ASIN ou preço ambíguo',()=>{assert.deepEqual(buildAmazonProduct({asin:'B000000000',name:'Kindle',price:'R$ 599,00'},source,'https://www.amazon.com.br/dp/B0CP31L73X'),[]);assert.deepEqual(buildAmazonProduct({asin:'B0CP31L73X',name:'Kindle',price:'R$ 599,00',multiplePrices:true},source,'https://www.amazon.com.br/dp/B0CP31L73X'),[])});

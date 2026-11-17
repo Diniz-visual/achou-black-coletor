@@ -1,7 +1,44 @@
 [
   {
     "name": "Amazon",
-    "url": "https://www.amazon.com.br/kindle-16gb-preto/dp/B0CP31L73X",
-    "enabled": true
+    "url": "https://www.amazon.com.br/blackfriday?ref_=nav_cs_td_bf_dt_cr",
+    "enabled": true,
+    "type": "campaign",
+    "maxProducts": 8
+  },
+  {
+    "name": "Mercado Livre",
+    "url": "https://www.mercadolivre.com.br/",
+    "enabled": false,
+    "type": "campaign",
+    "maxProducts": 8
+  },
+  {
+    "name": "Magalu",
+    "url": "https://www.magazineluiza.com.br/",
+    "enabled": false,
+    "type": "campaign",
+    "maxProducts": 8
+  },
+  {
+    "name": "KaBuM!",
+    "url": "https://www.kabum.com.br/",
+    "enabled": false,
+    "type": "campaign",
+    "maxProducts": 8
+  },
+  {
+    "name": "Netshoes",
+    "url": "https://www.netshoes.com.br/",
+    "enabled": false,
+    "type": "campaign",
+    "maxProducts": 8
+  },
+  {
+    "name": "Renner",
+    "url": "https://www.lojasrenner.com.br/",
+    "enabled": false,
+    "type": "campaign",
+    "maxProducts": 8
   }
 ]
