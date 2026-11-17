@@ -24,12 +24,15 @@ jobs:
           node-version: '22'
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm ci
 
       - name: Instalar Chromium
         run: npx playwright install --with-deps chromium
 
       - name: Coletar ofertas
+        env:
+          ACHOU_ENDPOINT: ${{ secrets.ACHOU_ENDPOINT }}
+          ACHOU_TOKEN: ${{ secrets.ACHOU_TOKEN }}
         run: npm run collect
 
       - name: Salvar resultados
@@ -39,3 +42,4 @@ jobs:
           name: ofertas-achou-black
           path: output/
           if-no-files-found: warn
+          retention-days: 7
