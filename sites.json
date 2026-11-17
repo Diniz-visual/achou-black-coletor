@@ -8,37 +8,37 @@
   },
   {
     "name": "Mercado Livre",
-    "url": "https://www.mercadolivre.com.br/",
-    "enabled": false,
+    "url": "https://www.mercadolivre.com.br/black-friday",
+    "enabled": true,
     "type": "campaign",
-    "maxProducts": 8
+    "maxProducts": 4
   },
   {
     "name": "Magalu",
     "url": "https://www.magazineluiza.com.br/",
     "enabled": false,
     "type": "campaign",
-    "maxProducts": 8
+    "maxProducts": 4
   },
   {
     "name": "KaBuM!",
     "url": "https://www.kabum.com.br/",
-    "enabled": false,
+    "enabled": true,
     "type": "campaign",
-    "maxProducts": 8
+    "maxProducts": 4
   },
   {
     "name": "Netshoes",
     "url": "https://www.netshoes.com.br/",
     "enabled": false,
     "type": "campaign",
-    "maxProducts": 8
+    "maxProducts": 4
   },
   {
     "name": "Renner",
     "url": "https://www.lojasrenner.com.br/",
     "enabled": false,
     "type": "campaign",
-    "maxProducts": 8
+    "maxProducts": 4
   }
 ]

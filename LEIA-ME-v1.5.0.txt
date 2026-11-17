@@ -1,0 +1,44 @@
+ACHOU BLACK v1.5.0 — GUIA DE PUBLICAÇÃO
+
+ETAPA 1 — HOSTINGER (atualizar index e categorias)
+1. Faça backup da versão que está funcionando e do DATA_DIR.
+2. Abra a pasta do código-fonte Node.js da aplicação achoublack.shop.
+3. Extraia achou-black-hostinger-patch-v1.5.0.zip na raiz da aplicação,
+   mantendo as subpastas public/ e lib/.
+4. Esses 4 arquivos são os únicos substituídos na versão parcial.
+5. Reinicie/publice a aplicação e abra a index em aba privada.
+6. Confira /api/products.php para verificar categoria e títulos.
+
+ETAPA 2 — GITHUB (piloto de mais lojas)
+1. No repositório Diniz-visual/achou-black-coletor, substitua
+   src/collect.js, adicione src/discovery.cjs e substitua sites.json.
+2. Preserve .github/workflows/coletar-ofertas.yml atual e os Secrets.
+3. Execute Actions > Achou Black - Coletar ofertas > Run workflow.
+4. Confira o log por fonte: vitrine HTTP, links de produtos, válidos.
+5. Verifique "HOSTINGER: importação confirmada" e /api/products.php.
+
+LOJAS
+- Amazon: ativa (até 8 links por execução)
+- Mercado Livre: piloto ativo (até 4 links por execução)
+- KaBuM!: piloto ativo (até 4 links por execução)
+- Magalu, Netshoes, Renner: reconhecimento de URLs implementado,
+  porém ficam desativados até comprovação de funcionamento.
+
+REGRAS
+- Fonte indisponível não equivale a erro de implantação.
+- Não são apresentados descontos de Black Friday sem dados confiáveis.
+- Apenas páginas de produtos individuais com preço estruturado válido
+  podem ser importadas; se loja bloquear a coleta não há bypass.
+- O token ACHOU_TOKEN não deve ser alterado nem compartilhado.
+- O backend de importação e DATA_DIR não precisam ser modificados.
+
+TESTES NA CÓPIA DE TRABALHO
+- Hostinger: 23/23
+- Coletor: 6/6
+- Não foi possível executar a coleta real das novas lojas daqui;
+  GitHub Actions fará esse teste após a publicação.
+
+ROLLBACK
+- Reponha os 4 arquivos antigos na Hostinger.
+- No GitHub, reverta o commit dos 3 arquivos do coletor.
+- Preserve products.json e os Secrets.
